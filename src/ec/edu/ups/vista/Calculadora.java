@@ -14,7 +14,8 @@ import javax.swing.JOptionPane;
 
 /**
  *
- * @author Juan Carlos Arcila Díaz carlos_ad_6@hotmail.com
+ * @author ByronVàsquez
+ * @since 03/mayo/2019
  */
 public class Calculadora extends javax.swing.JFrame {
     
@@ -587,7 +588,7 @@ public static String calculadora(String memoria1,String memoria2,String signo){
         }
         
     }//GEN-LAST:event_jButton10ActionPerformed
-
+//mostrar valores de pantalla
     private void jButton17ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton17ActionPerformed
         // TODO add your handling code here:
         String cadena;
@@ -598,7 +599,7 @@ public static String calculadora(String memoria1,String memoria2,String signo){
             txtpantalla.setText(cadena);
         }
     }//GEN-LAST:event_jButton17ActionPerformed
-
+//procesos a realizar cuando este en vacio
     private void jButton20ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton20ActionPerformed
         // TODO add your handling code here:
         txtpantalla.setText("");
@@ -627,7 +628,8 @@ public static String calculadora(String memoria1,String memoria2,String signo){
             txtpantalla.setText(num.toString());
         }
     }//GEN-LAST:event_jButton6ActionPerformed
-
+//declaracion de simbolos
+    
     private void jButton16ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton16ActionPerformed
         // TODO add your handling code here
          if (!txtpantalla.getText().equals("")) {
@@ -680,7 +682,7 @@ public static String calculadora(String memoria1,String memoria2,String signo){
     private void txtpantallaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtpantallaActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_txtpantallaActionPerformed
-
+//boton el funcionamiento del punto
     public static boolean existepunto(String cadena){
         boolean resultado;
         resultado=false;
