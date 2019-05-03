@@ -17,20 +17,23 @@ import javax.swing.JOptionPane;
  * @author Juan Carlos Arcila Díaz carlos_ad_6@hotmail.com
  */
 public class Calculadora extends javax.swing.JFrame {
-        
-    String memoria1;
-    String signo;
-    String memoria2;
+    
+//Declaracion de Variables        
+    private String memoria1;
+    private String signo;
+    private String memoria2;
+    private boolean inicio=true;
     
     
     
     
     /**
-     * Creates new form calculadora
+     * Creamos una nueva calculadora
      */
     public Calculadora() throws IOException {
         initComponents();
         setLocationRelativeTo(null);
+//Declaramos un icono nuevo para la calculadora
         String dir = "https://es.calcuworld.com/wp-content/uploads/sites/2/2013/02/matematicas.png";
         BufferedImage icono=ImageIO.read(new URL(dir));
         setIconImage(icono);
@@ -75,6 +78,7 @@ public class Calculadora extends javax.swing.JFrame {
         txtpantalla.setEditable(false);
         txtpantalla.setFont(new java.awt.Font("Tahoma", 0, 36)); // NOI18N
         txtpantalla.setHorizontalAlignment(javax.swing.JTextField.RIGHT);
+        txtpantalla.setText("0");
         txtpantalla.setToolTipText("");
         txtpantalla.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -346,16 +350,16 @@ public class Calculadora extends javax.swing.JFrame {
                                         .addComponent(jButton6, javax.swing.GroupLayout.PREFERRED_SIZE, 52, javax.swing.GroupLayout.PREFERRED_SIZE)
                                         .addGap(18, 18, 18)
                                         .addComponent(jButton21, javax.swing.GroupLayout.PREFERRED_SIZE, 52, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                            .addComponent(txtpantalla)
-                            .addComponent(jTextField1))))
-                .addContainerGap(27, Short.MAX_VALUE))
+                            .addComponent(jTextField1)
+                            .addComponent(txtpantalla, javax.swing.GroupLayout.PREFERRED_SIZE, 332, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                .addContainerGap(23, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(25, 25, 25)
+                .addGap(26, 26, 26)
                 .addComponent(txtpantalla, javax.swing.GroupLayout.PREFERRED_SIZE, 67, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
@@ -393,22 +397,34 @@ public class Calculadora extends javax.swing.JFrame {
                             .addComponent(jButton10, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jButton16, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addComponent(jButton18, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(12, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-
+//Declaracion de botones del 0 al 9
     private void jButton8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton8ActionPerformed
         // TODO add your handling code here:
-        txtpantalla.setText(txtpantalla.getText()+"5");
+        if(inicio == true){
+            txtpantalla.setText(" ");
+            txtpantalla.setText("5");
+            inicio=false;            
+        }else{
+            txtpantalla.setText(txtpantalla.getText()+"5");
+        }
     }//GEN-LAST:event_jButton8ActionPerformed
 
     private void jButton7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton7ActionPerformed
         // TODO add your handling code here:
-        txtpantalla.setText(txtpantalla.getText()+"8");
+       if(inicio == true){
+            txtpantalla.setText(" ");
+            txtpantalla.setText("8");
+            inicio=false;            
+        }else{
+            txtpantalla.setText(txtpantalla.getText()+"8");
+        }
     }//GEN-LAST:event_jButton7ActionPerformed
-
+//Opcion de la resta
     private void jButton13ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton13ActionPerformed
         // TODO add your handling code here:
         if (!txtpantalla.getText().equals("")) {
@@ -436,7 +452,7 @@ public static String calculadora(String memoria1,String memoria2,String signo){
     Double resultado=0.0;
     String respuesta;
     
-    
+  //Operaciones basicas en todos los botones  
     if (signo.equals("-")) {
         resultado=Double.parseDouble(memoria1)-Double.parseDouble(memoria2);
         
@@ -467,42 +483,91 @@ public static String calculadora(String memoria1,String memoria2,String signo){
     
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
-        txtpantalla.setText(txtpantalla.getText()+"1");
+        if(inicio == true){
+            txtpantalla.setText(" ");
+            txtpantalla.setText("1");
+            inicio=false;            
+        }else{
+            txtpantalla.setText(txtpantalla.getText()+"1");
+        }
+        
     }//GEN-LAST:event_jButton1ActionPerformed
-
+//Declaracion botenes restantes
     private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
         // TODO add your handling code here:
-        txtpantalla.setText(txtpantalla.getText()+"2");
+        if(inicio == true){
+            txtpantalla.setText(" ");
+            txtpantalla.setText("2");
+            inicio=false;            
+        }else{
+            txtpantalla.setText(txtpantalla.getText()+"2");
+        }
     }//GEN-LAST:event_jButton5ActionPerformed
 
     private void jButton9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton9ActionPerformed
         // TODO add your handling code here:
-        txtpantalla.setText(txtpantalla.getText()+"3");
+        if(inicio == true){
+            txtpantalla.setText(" ");
+            txtpantalla.setText("3");
+            inicio=false;            
+        }else{
+            txtpantalla.setText(txtpantalla.getText()+"3");
+        }
     }//GEN-LAST:event_jButton9ActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
         // TODO add your handling code here:
-        txtpantalla.setText(txtpantalla.getText()+"4");
+        if(inicio == true){
+            txtpantalla.setText(" ");
+            txtpantalla.setText("4");
+            inicio=false;            
+        }else{
+            txtpantalla.setText(txtpantalla.getText()+"4");
+        }
     }//GEN-LAST:event_jButton2ActionPerformed
 
     private void jButton12ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton12ActionPerformed
         // TODO add your handling code here:
-        txtpantalla.setText(txtpantalla.getText()+"6");
+        if(inicio == true){
+            txtpantalla.setText(" ");
+            txtpantalla.setText("6");
+            inicio=false;            
+        }else{
+            txtpantalla.setText(txtpantalla.getText()+"6");
+        }
     }//GEN-LAST:event_jButton12ActionPerformed
 
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
         // TODO add your handling code here:
-        txtpantalla.setText(txtpantalla.getText()+"7");
+        if(inicio == true){
+            txtpantalla.setText(" ");
+            txtpantalla.setText("7");
+            inicio=false;            
+        }else{
+            txtpantalla.setText(txtpantalla.getText()+"7");
+        }
     }//GEN-LAST:event_jButton3ActionPerformed
 
     private void jButton11ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton11ActionPerformed
         // TODO add your handling code here:
-        txtpantalla.setText(txtpantalla.getText()+"9");
+       if(inicio == true){
+            txtpantalla.setText(" ");
+            txtpantalla.setText("9");
+            inicio=false;            
+        }else{
+            txtpantalla.setText(txtpantalla.getText()+"9");
+        }
     }//GEN-LAST:event_jButton11ActionPerformed
 
     private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
         // TODO add your handling code here:
-        txtpantalla.setText(txtpantalla.getText()+"0");
+       if(inicio == true){
+            txtpantalla.setText(" ");
+            txtpantalla.setText("0");
+            inicio=false;            
+        }else{
+            txtpantalla.setText(txtpantalla.getText()+"0");
+        }
     }//GEN-LAST:event_jButton4ActionPerformed
 
     private void jButton10ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton10ActionPerformed
@@ -703,3 +768,4 @@ public static String calculadora(String memoria1,String memoria2,String signo){
     private javax.swing.JTextField txtpantalla;
     // End of variables declaration//GEN-END:variables
 }
+
