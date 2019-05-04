@@ -33,6 +33,7 @@ public class Calculadora extends javax.swing.JFrame {
      */
     public Calculadora() throws IOException {
         initComponents();
+        this.setTitle("Calculadora");
         setLocationRelativeTo(null);
 //Declaramos un icono nuevo para la calculadora
         String dir = "https://es.calcuworld.com/wp-content/uploads/sites/2/2013/02/matematicas.png";
