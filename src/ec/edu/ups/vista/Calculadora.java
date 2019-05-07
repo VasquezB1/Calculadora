@@ -34,7 +34,7 @@ public class Calculadora extends javax.swing.JFrame {
      */
     public Calculadora() throws IOException {
         initComponents();
-        this.setTitle("Calculadora");
+        this.setTitle("Calculadora Básica");
         setLocationRelativeTo(null);
 //Declaramos un icono nuevo para la calculadora
         setIconImage(new ImageIcon(("src/ec/edu/ups/vista/calculadoraicono.png")).getImage());
